@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :farm_produce, class_name :produce, foreign_key :"farmer_id"
+  has_many :farm_produce, class_name: "Produce", foreign_key: "farmer_id"
   has_many :purchases
-  has_many :produces, through :purchases
+  has_many :produces, through: :purchases
 end
