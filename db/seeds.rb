@@ -13,7 +13,20 @@ User.destroy_all
 Purchase.destroy_all
 Produce.destroy_all
  20.times do |number|
- 	User.create(name: Faker::Name.name, email: "#{number}@email.com", password: "password",phone_number: Faker::PhoneNumber.cell_phone,address: Faker::Address.street_address,)
+ 	User.create(name: Faker::Name.name, email: "#{number}@email.com", password: "password",phone_number: Faker::PhoneNumber.cell_phone)
  end
 
+users = User.all
+
+
+
+15.times do
+	Produce.create(name: Faker::Food.ingredient,price: Faker::Number.decimal(2),farmer_id: users.sample)
+end
+
+produces = Produce.all
+
+15.times do
+	Purchase.create(produce_id: produces.sample, user_id: users.sample)
+end
 
