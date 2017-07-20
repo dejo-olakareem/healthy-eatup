@@ -8,6 +8,12 @@ end
 #devise
 gem 'devise'
 
+#bootstrap
+gem 'bootstrap-sass', '3.3.7'
+
+#faker
+gem 'faker'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
